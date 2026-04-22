@@ -2,21 +2,21 @@
 
 Pipedrive MCP Pack — wraps the Pipedrive REST API v1
 
-Part of the [Pipeworx](https://pipeworx.io) open MCP gateway.
+Part of [Pipeworx](https://pipeworx.io) — an MCP gateway connecting AI agents to 250+ live data sources.
 
 ## Tools
 
 | Tool | Description |
 |------|-------------|
-| `pipedrive_list_deals` | List deals from Pipedrive CRM. |
-| `pipedrive_get_deal` | Get a single deal by ID from Pipedrive. |
-| `pipedrive_list_persons` | List persons (contacts) from Pipedrive. |
-| `pipedrive_get_person` | Get a single person (contact) by ID from Pipedrive. |
-| `pipedrive_search` | Search across deals, persons, organizations, products, or files in Pipedrive. |
+| `pipedrive_list_deals` | View all deals in your pipeline. Returns deal IDs, titles, values, stages, and owners. Use pipedrive_get_deal for full details on a specific deal. |
+| `pipedrive_get_deal` | Get complete details for a specific deal (by ID). Returns title, value, stage, probability, owner, associated contacts, and timeline. |
+| `pipedrive_list_persons` | View all contacts in your CRM. Returns names, email addresses, phone numbers, and associated organizations and deals. |
+| `pipedrive_get_person` | Get full contact details by ID. Returns name, emails, phones, organization, associated deals, and custom fields. |
+| `pipedrive_search` | Search deals, contacts, organizations, products, or files by keyword. Returns matching records with IDs and basic info. |
 
 ## Quick Start
 
-Add to your MCP client config:
+Add to your MCP client (Claude Desktop, Cursor, Windsurf, etc.):
 
 ```json
 {
@@ -28,11 +28,32 @@ Add to your MCP client config:
 }
 ```
 
-Or use the CLI:
+Or connect to the full Pipeworx gateway for access to all 250+ data sources:
 
-```bash
-npx pipeworx use pipedrive
+```json
+{
+  "mcpServers": {
+    "pipeworx": {
+      "url": "https://gateway.pipeworx.io/mcp"
+    }
+  }
+}
 ```
+
+## Using with ask_pipeworx
+
+Instead of calling tools directly, you can ask questions in plain English:
+
+```
+ask_pipeworx({ question: "your question about Pipedrive data" })
+```
+
+The gateway picks the right tool and fills the arguments automatically.
+
+## More
+
+- [All tools and guides](https://github.com/pipeworx-io/examples)
+- [pipeworx.io](https://pipeworx.io)
 
 ## License
 
