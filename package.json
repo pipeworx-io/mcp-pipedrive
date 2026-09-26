@@ -1,6 +1,6 @@
 {
   "name": "@pipeworx/mcp-pipedrive",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pipedrive MCP Pack — wraps the Pipedrive REST API v1",
   "type": "module",
   "main": "src/index.ts",
@@ -26,7 +26,7 @@
     "@cloudflare/workers-types": "^4.20260405.1"
   },
   "pipeworx": {
-    "sourceHash": "v1-c7f62c26f32cd770c4fe8c5746f4e900b387b84985054c5d88aafc970aa9b544",
-    "sourceCommit": "00c836ddeaecbdd581dcfb0fb1842efea104006e"
+    "sourceHash": "v1-0fd8afdb2d00cae2e0c707ce5bd47b4813789a16c22ee3d628ecf04ce255a185",
+    "sourceCommit": "4d51421bd010ad9a322c2245b70b401604912eff"
   }
 }
