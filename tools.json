@@ -1,0 +1,125 @@
+[
+  {
+    "name": "pipedrive_list_deals",
+    "description": "View all deals in your pipeline. Returns deal IDs, titles, values, stages, and owners. Use pipedrive_get_deal for full details on a specific deal.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Pipedrive API token"
+        },
+        "status": {
+          "type": "string",
+          "description": "Filter by status: open, won, lost, deleted, all_not_deleted (default: all_not_deleted)"
+        },
+        "start": {
+          "type": "number",
+          "description": "Pagination start (default 0)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results (max 500, default 50)"
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "pipedrive_get_deal",
+    "description": "Get complete details for a specific deal (by ID). Returns title, value, stage, probability, owner, associated contacts, and timeline.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Pipedrive API token"
+        },
+        "id": {
+          "type": "number",
+          "description": "Deal ID"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "pipedrive_list_persons",
+    "description": "View all contacts in your CRM. Returns names, email addresses, phone numbers, and associated organizations and deals.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Pipedrive API token"
+        },
+        "start": {
+          "type": "number",
+          "description": "Pagination start (default 0)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Number of results (max 500, default 50)"
+        }
+      },
+      "required": [
+        "_apiKey"
+      ]
+    }
+  },
+  {
+    "name": "pipedrive_get_person",
+    "description": "Get full contact details by ID. Returns name, emails, phones, organization, associated deals, and custom fields.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Pipedrive API token"
+        },
+        "id": {
+          "type": "number",
+          "description": "Person ID"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "id"
+      ]
+    }
+  },
+  {
+    "name": "pipedrive_search",
+    "description": "Search deals, contacts, organizations, products, or files by keyword. Returns matching records with IDs and basic info.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "_apiKey": {
+          "type": "string",
+          "description": "Pipedrive API token"
+        },
+        "term": {
+          "type": "string",
+          "description": "Search term"
+        },
+        "item_types": {
+          "type": "string",
+          "description": "Comma-separated item types to search: deal, person, organization, product, file (default: all)"
+        },
+        "limit": {
+          "type": "number",
+          "description": "Max results (default 50)"
+        }
+      },
+      "required": [
+        "_apiKey",
+        "term"
+      ]
+    }
+  }
+]

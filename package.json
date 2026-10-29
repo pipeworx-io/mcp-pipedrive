@@ -1,12 +1,20 @@
 {
   "name": "@pipeworx/mcp-pipedrive",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Pipedrive MCP Pack — wraps the Pipedrive REST API v1",
   "type": "module",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
   "bin": {
     "mcp-pipedrive": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
   },
   "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "pipedrive"],
   "license": "MIT",
@@ -14,19 +22,12 @@
     "type": "git",
     "url": "git+https://github.com/pipeworx-io/mcp-pipedrive.git"
   },
-  "scripts": {
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@modelcontextprotocol/sdk": "^1.30.0",
-    "tsx": "^4.19.0"
-  },
-  "devDependencies": {
-    "typescript": "^5.9.3",
-    "@cloudflare/workers-types": "^4.20260405.1"
-  },
+  "mcpName": "io.github.pipeworx-io/pipedrive",
   "pipeworx": {
-    "sourceHash": "v1-0fd8afdb2d00cae2e0c707ce5bd47b4813789a16c22ee3d628ecf04ce255a185",
-    "sourceCommit": "4d51421bd010ad9a322c2245b70b401604912eff"
+    "mode": "gateway",
+    "slug": "pipedrive",
+    "gatewaySlug": "pipedrive",
+    "sourceHash": "v1-fc600ccfbd79e1181f2ea3dd92070b8441d3c35bb9b083e8e1046c55d660f636",
+    "sourceCommit": "6bae4cfa7b6a73bbe014dc8820a19c80c842b21e"
   }
 }
